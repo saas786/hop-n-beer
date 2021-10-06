@@ -1,0 +1,7 @@
+{
+  "name": "hop-n-beer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
