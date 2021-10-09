@@ -40,6 +40,10 @@
         {{item.titolo}}
       </ion-button>
     </ion-item>
-  </ion-list>
 
+    <ion-item *ngFor="let item of queue_songs" slot="start">
+      <img class="song-cover" src="{{item.copertina}}">
+      <ion-label class="song-button" expand="full" fill="clear" color="dark">{{item.titolo}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

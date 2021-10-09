@@ -12,6 +12,7 @@ export class SongsPage implements OnInit {
 
 
   public available_songs:any;
+  public queue_songs:any;
   public unavailable_songs:any;
 
   constructor(public callNumber: CallNumber, private http: HttpClient, public alertController: AlertController) { }
@@ -67,19 +68,20 @@ export class SongsPage implements OnInit {
   }
 
   songs_list(){
-    this.http.get("http://192.168.1.141:3000/music/lista/disp/app").subscribe((data) =>{        
+    this.http.get("http://localhost:3000/music/lista/disp/app").subscribe((data) =>{        
       this.available_songs = data;
     })
 
-    this.http.get("http://192.168.1.141:3000/music/lista/noDisp/app").subscribe((data) =>{        
+    this.http.get("http://localhost:3000/music/lista/noDisp/app").subscribe((data) =>{        
       this.unavailable_songs = data;
     })
   }
 
   queue_list(){
-    this.http.get("http://192.168.1.141:3000/music/queue/show").subscribe((data) =>{
-      this.available_songs = data;
+    this.http.get("http://localhost:3000/music/queue/show").subscribe((data) =>{
+      this.queue_songs = data;
       this.unavailable_songs = [];
+      this.available_songs = [];
     })
   }
 

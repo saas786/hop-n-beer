@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SplashscreenPageRoutingModule } from './splashscreen-routing.module';
+import { LoaderPageRoutingModule } from './loader-routing.module';
 
-import { SplashscreenPage } from './splashscreen.page';
+import { LoaderPage } from './loader.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SplashscreenPageRoutingModule
+    LoaderPageRoutingModule
   ],
-  declarations: [SplashscreenPage]
+  declarations: [LoaderPage]
 })
-export class SplashscreenPageModule {}
+export class LoaderPageModule {}
