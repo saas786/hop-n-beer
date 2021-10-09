@@ -4,21 +4,25 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'splashscreen',
+    redirectTo: 'pages/splashscreen',
     pathMatch: 'full'
   },
   {
-    path: 'splashscreen',
+    path: 'pages/splashscreen',
     loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
   },
   {
-    path: 'login',
+    path: 'pages/login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'menu',
-    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
-  }
+    path: 'pages/menu-page',
+    loadChildren: () => import('./pages/menu-page/menu-page.module').then( m => m.MenuPagePageModule)
+  },
+  {
+    path: 'songs',
+    loadChildren: () => import('./pages/songs/songs.module').then( m => m.SongsPageModule)
+  },
 ];
 
 @NgModule({

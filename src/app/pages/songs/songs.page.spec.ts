@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MenuPage } from './menu.page';
+import { SongsPage } from './songs.page';
 
-describe('MenuPage', () => {
-  let component: MenuPage;
-  let fixture: ComponentFixture<MenuPage>;
+describe('SongsPage', () => {
+  let component: SongsPage;
+  let fixture: ComponentFixture<SongsPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuPage ],
+      declarations: [ SongsPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MenuPage);
+    fixture = TestBed.createComponent(SongsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
@@ -22,4 +22,3 @@ describe('MenuPage', () => {
     expect(component).toBeTruthy();
   });
 });
-
