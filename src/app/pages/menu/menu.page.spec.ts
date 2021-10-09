@@ -22,3 +22,4 @@ describe('MenuPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
