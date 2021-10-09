@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'pages/loader',
     loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
   },
+  {
+    path: 'splashscreen',
+    loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
+  },
 ];
 
 @NgModule({
