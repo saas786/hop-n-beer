@@ -9,7 +9,7 @@ export class AppComponent {
     { title: 'Home', url: '/pages/home'},
     { title: 'Menu', url: '/pages/menu-page'},
     { title: 'Spina', url: '/pages/spina'},
-    { title: 'Musica', url: '/pages/musica'},
+    { title: 'Musica', url: '/pages/songs'},
     { title: "Ape 'N' Beer", url: '/pages/ape'}
   ];
   constructor() {}
