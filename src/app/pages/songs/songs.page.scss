@@ -1,5 +1,9 @@
-.song-button{
-    font-size: 20px
+.song-button, .song-button-un{
+    font-size: 20px;
+}
+
+.song-button-un{
+    text-decoration: line-through;
 }
 
 .song-id{
@@ -15,4 +19,11 @@ ion-content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.title-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

@@ -11,36 +11,35 @@
 </ion-header>
 
 <ion-content>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="schedule">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>Schedule</ion-label>
-        <ion-badge>6</ion-badge>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="speakers">
-        <ion-icon name="person-circle"></ion-icon>
-        <ion-label>Speakers</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="map">
-        <ion-icon name="map"></ion-icon>
-        <ion-label>Map</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="about">
-        <ion-icon name="information-circle"></ion-icon>
-        <ion-label>About</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+  <div class="title-page">
+    <h2>JUKEBOX</h2>
+    <h3>Aggiungi Canzoni in Coda</h3>
+  </div>
+  <ion-segment (ionChange)="show($event)" value="canzoni">
+    <ion-segment-button value="canzoni">
+      <ion-label>Canzoni</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="coda">
+      <ion-label>Coda</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
   <ion-list>
-    <ion-item *ngFor="let item of items" slot="start">
+    <ion-item *ngFor="let item of available_songs" slot="start">
       <img class="song-cover" src="{{item.copertina}}">
-      <ion-button class="song-button" (click)="queue(item.id)" expand="full" fill="clear" color="dark">
+      <ion-button class="song-button" (click)=presentAlertConfirm(item.id,item.titolo) expand="full" fill="clear" color="dark">
+        {{item.titolo}}
+      </ion-button>
+    </ion-item>
+
+    <ion-item *ngFor="let item of unavailable_songs" slot="start">
+      <img class="song-cover" src="{{item.copertina}}">
+      <ion-button class="song-button-un" disabled expand="full" fill="clear" color="dark">
         {{item.titolo}}
       </ion-button>
     </ion-item>
   </ion-list>
+
 </ion-content>

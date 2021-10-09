@@ -23,10 +23,6 @@ const routes: Routes = [
     path: 'pages/songs',
     loadChildren: () => import('./pages/songs/songs.module').then( m => m.SongsPageModule)
   },
-  {
-    path: 'queue',
-    loadChildren: () => import('./pages/queue/queue.module').then( m => m.QueuePageModule)
-  },
 ];
 
 @NgModule({
