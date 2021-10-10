@@ -15,6 +15,7 @@ dependencies {
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
     implementation project(':capacitor-status-bar')
+    implementation 'org.apache.commons:commons-io:1.3.2'
     implementation "com.android.support:support-v4:26.+"
 }
 

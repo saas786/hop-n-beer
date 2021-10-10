@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/birre/birre.module').then( m => m.BirrePageModule)
   },
   {
-    path: 'home',
+    path: 'pages/home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
 ];

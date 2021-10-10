@@ -20,7 +20,7 @@ export class BirrePage implements OnInit {
   }
   
   callButton(){
-    this.callNumber.callNumber("3451056969", true)
+    this.callNumber.callNumber("3314378428", true)
       .then(res => console.log('Chiamata Avviata', res))
       .catch(err => console.log('Errore nell\'avvio della chiamata', err));
   }
