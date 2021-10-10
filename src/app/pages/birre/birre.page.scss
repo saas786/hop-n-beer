@@ -1,0 +1,37 @@
+ion-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.birra{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    border: 2px solid white;
+}
+
+.riga1,.riga2,.riga3{
+    display: flex;
+    width: 100%;
+    height: 33.333333%;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-birra{
+    display: inline;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.logo{
+    width: 80%;
+    height: 70%;
+}
+
+.nome{
+    color: #ECE5DD
+}

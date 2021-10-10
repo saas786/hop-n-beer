@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
   },
   {
-    path: 'birre',
+    path: 'pages/birre',
     loadChildren: () => import('./pages/birre/birre.module').then( m => m.BirrePageModule)
   },
 ];
