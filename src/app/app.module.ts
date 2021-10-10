@@ -6,7 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {CallNumber} from "@ionic-native/call-number/ngx"
+import { CallNumber } from "@ionic-native/call-number/ngx"
 import { HttpClientModule } from '@angular/common/http';
 
 

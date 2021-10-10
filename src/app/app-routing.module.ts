@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'pages/loader',
+    redirectTo: 'pages/splashscreen',
     pathMatch: 'full'
   },
   {
@@ -24,8 +24,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
   },
   {
-    path: 'splashscreen',
+    path: 'pages/splashscreen',
     loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
+  },
+  {
+    path: 'birre',
+    loadChildren: () => import('./pages/birre/birre.module').then( m => m.BirrePageModule)
   },
 ];
 
