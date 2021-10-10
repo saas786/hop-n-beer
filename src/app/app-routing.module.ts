@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'pages/birre',
     loadChildren: () => import('./pages/birre/birre.module').then( m => m.BirrePageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
 ];
 
 @NgModule({

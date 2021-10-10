@@ -6,6 +6,10 @@
     <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber"/>
   </feature>
 
+  <feature name="Instagram">
+    <param name="android-package" value="com.vladstirbu.cordova.CDVInstagramPlugin"/>
+  </feature>
+
   <feature name="CordovaHttpPlugin">
     <param name="android-package" value="com.silkimen.cordovahttp.CordovaHttpPlugin"/>
   </feature>
