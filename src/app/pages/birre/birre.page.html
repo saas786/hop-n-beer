@@ -18,7 +18,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <div class="riga1">
-    <div class="birra" (click)="open_beer(i.nome)" id={{item.colore}} [style.backgroundColor] = "item.colore" *ngFor="let item of birre | slice:0:2;">
+    <div class="birra" id={{item.colore}} [style.backgroundColor] = "item.colore" *ngFor="let item of birre | slice:0:2;">
       <img class="img-birra" src="http://localhost:3000{{item.logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>
