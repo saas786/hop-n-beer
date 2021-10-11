@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar> 
+  <ion-toolbar>
     <ion-menu-button color="dark" slot="start"></ion-menu-button>
-    <ion-router-link fill="clear" href="/pages/splashscreen">
+    <ion-router-link fill="clear" href="/pages/home">
       <img  src="./assets/images/logo-title.png">
     </ion-router-link>
     <ion-button slot="end" fill="clear" color="dark" (click)="callButton(i.nome)">
@@ -11,6 +11,9 @@
 </ion-header>
 
 <ion-content scrollY="false">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div class="riga1">
     <div class="birra" (click)="open_beer(i.nome)" id={{item.colore}} [style.backgroundColor] = "item.colore" *ngFor="let item of birre | slice:0:2;">
       <img class="img-birra" src="http://localhost:3000{{item.logo}}">

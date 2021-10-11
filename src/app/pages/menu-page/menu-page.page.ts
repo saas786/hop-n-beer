@@ -12,6 +12,17 @@ export class MenuPagePage implements OnInit {
 
   ngOnInit() {
   }
+
+  
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
   callButton(){
     this.callNumber.callNumber("3314378428", true)
       .then(res => console.log('Chiamata Avviata', res))

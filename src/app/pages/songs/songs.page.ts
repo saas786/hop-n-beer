@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { HttpClient } from '@angular/common/http';
-import { AlertController } from "@ionic/angular"
+import { AlertController } from "@ionic/angular";
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-songs',
@@ -12,8 +13,12 @@ export class SongsPage implements OnInit {
 
 
   public available_songs:any;
-  public queue_songs:any;
   public unavailable_songs:any;
+
+  public available_songs_backup:any;
+  public unavailable_songs_backup:any;
+  public queue_songs:any;
+
 
   constructor(public callNumber: CallNumber, private http: HttpClient, public alertController: AlertController) { }
 
@@ -85,6 +90,38 @@ export class SongsPage implements OnInit {
       this.unavailable_songs = [];
       this.available_songs = [];
     })
+  }
+
+  
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
+  async filterList(evt) {
+    this.available_songs = this.available_songs_backup;
+    this.unavailable_songs = this.unavailable_songs_backup;
+    const searchTerm = evt.srcElement.value;
+  
+    if (!searchTerm) {
+      return;
+    }
+  
+    this.available_songs = this.available_songs.filter(currentFood => {
+      if (currentFood.name && searchTerm) {
+        return (currentFood.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+      }
+    });
+    
+    this.unavailable_songs = this.unavailable_songs.filter(currentFood => {
+      if (currentFood.name && searchTerm) {
+        return (currentFood.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+      }
+    });
   }
 
   callButton(){
