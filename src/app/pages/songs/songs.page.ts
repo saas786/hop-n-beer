@@ -99,7 +99,14 @@ export class SongsPage implements OnInit {
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();
+      window.location.reload();
     }, 2000);
+  }
+
+  filterItems(searchTerm) {
+    return this.available_songs.filter(item => {
+      return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+    });
   }
 
   async filterList(evt) {

@@ -1,10 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-menu-button color="dark" slot="start"></ion-menu-button>
-    <ion-router-link fill="clear" href="/pages/home">
-      <img src="./assets/images/logo-title.png">
-    </ion-router-link>
-    <ion-button slot="end" fill="clear" color="dark" (click)="callButton()">
+    <ion-title mode="ios">
+      <ion-router-link fill="clear" href="/pages/home">
+        <img id="logo" src="./assets/images/logo-title.png">
+      </ion-router-link>
+    </ion-title>
+    <ion-menu-button color="dark" slot="start" ></ion-menu-button>
+    <ion-button class="call" slot="end" fill="clear" color="dark" (click)="callButton()">
       <ion-icon name="call-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -28,7 +30,7 @@
     </ion-segment-button>
 
   </ion-segment>
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar (ionChange)="filterItems($event.target.value)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of available_songs" slot="start">
       <img class="song-cover" src="{{item.copertina}}">

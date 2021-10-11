@@ -35,3 +35,17 @@ ion-content{
 .nome{
     color: #ECE5DD
 }
+
+ion-title{
+    max-width: 100%;
+}
+ion-toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-menu-button,.call{
+    width: 20%;
+    max-width: 20%;
+}
