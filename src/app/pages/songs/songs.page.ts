@@ -101,7 +101,7 @@ export class SongsPage implements OnInit {
       console.log('Async operation has ended');
       event.target.complete();
       window.location.reload();
-    }, 2000);
+    }, 1000);
   }
 
   filterItems(searchTerm) {

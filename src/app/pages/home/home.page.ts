@@ -21,7 +21,8 @@ export class HomePage implements OnInit {
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();
-    }, 2000);
+      window.location.reload();
+    }, 1000);
   }
 
   
