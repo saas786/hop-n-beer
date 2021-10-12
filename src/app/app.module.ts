@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteReuseStrategy } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+
 
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -17,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,RouterModule,CommonModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },CallNumber],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },CallNumber, GooglePlus],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
