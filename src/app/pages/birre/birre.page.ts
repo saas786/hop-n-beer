@@ -36,7 +36,7 @@ export class BirrePage implements OnInit {
   }
 
   songs_list(){
-    this.http.get("http://192.168.1.40:3000/birre/lista/app").subscribe((data) =>{        
+    this.http.get("https://d61d-79-19-191-69.ngrok.io/birre/lista/app").subscribe((data) =>{        
       this.birre = data;
     })
   }
