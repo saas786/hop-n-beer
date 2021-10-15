@@ -5,10 +5,11 @@ ion-card{
     align-items: center;
 }
 
-
 ion-title{
     max-width: 100%;
+    width: 100%;
 }
+
 ion-toolbar{
     display: flex;
     justify-content: center;
@@ -21,11 +22,10 @@ ion-toolbar{
 }
 
 ion-icon{
-    width: 90%;
-    height: 90%;
+    width: 85%;
+    height: 85%;
 }
 
 ion-menu-button{
     font-size: 40px;
 }
-
