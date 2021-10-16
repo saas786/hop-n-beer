@@ -3,7 +3,7 @@ ion-content {
 }
 
 #main-content{
-  background-image:  url("https://d61d-79-19-191-69.ngrok.io/static/fondo-app.png");
+  --background: url("https://d61d-79-19-191-69.ngrok.io/static/fondo-app.png") 0 0/100% 100% no-repeat;
   background-repeat: repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
