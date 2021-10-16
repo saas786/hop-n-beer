@@ -1,5 +1,13 @@
-ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+ion-content {
+  --background: var(--ion-item-background, var(--ion-background-color, #f3f3f3));
+}
+
+#main-content{
+  background-image:  url("C:\\Users\\organ\\Docs\\Programmazione\\Python\\hopNbeer\\app\\hop-n\\beer/src\\assets/images\\fondo-app.png");
+  background-repeat: repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
 
 ion-menu.md ion-content {
@@ -16,19 +24,20 @@ ion-menu.md ion-list {
 ion-menu.md ion-item {
   --padding-start: 10px;
   --padding-end: 10px;
+  color: #73849a;
   border-radius: 4px;
 }
 
 ion-menu.md ion-item.selected {
-  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+  --background: rgba(var(0,0,0), 0.14);
 }
 
 ion-menu.md ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+  color: var(--ion-color-secondary);
 }
 
 ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+  color: #73849a;
 }
 
 ion-menu.md ion-item ion-label {
@@ -51,7 +60,7 @@ ion-menu.ios ion-item {
 }
 
 ion-menu.ios ion-item.selected {
-  color: var(--ion-color-primary);
+  color: var(--ion-color-secondary);
 }
 
 ion-menu.ios ion-item {
@@ -60,5 +69,27 @@ ion-menu.ios ion-item {
 }
 
 ion-item.selected {
-  --color: var(--ion-color-primary);
+  --color: var(--ion-color-secondary);
 }
+ion-item.md.selected {
+  --color: var(--ion-color-secondary);
+}
+
+// CUSTOM SECTION 
+
+.foot-call{
+  color: #73849a;
+  width: 100%;
+  height: 100%;
+}
+
+#footer{
+  height: 10%;
+}
+
+/* .button-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+ */ 

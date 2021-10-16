@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -12,5 +14,10 @@ export class AppComponent {
     { title: 'Musica', url: '/pages/songs'},
     { title: "Ape 'N' Beer", url: '/pages/ape'}
   ];
-  constructor() {}
+  constructor(public callNumber: CallNumber) {}
+  call(){
+    this.callNumber.callNumber("3314378428", true)
+      .then(res => console.log('Chiamata Avviata', res))
+      .catch(err => console.log('Errore nell\'avvio della chiamata', err));
+  }
 }
