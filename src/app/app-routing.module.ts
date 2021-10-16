@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'pages/home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'off',
+    loadChildren: () => import('./pages/off/off.module').then( m => m.OffPageModule)
+  },
 ];
 
 @NgModule({

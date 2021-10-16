@@ -1,0 +1,30 @@
+
+.title-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+ion-title{
+    max-width: 100%;
+}
+ion-toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu,.call{
+    width: 20%;
+    max-width: 20%;
+}
+
+ion-icon{
+    width: 100%;
+    height: 100%;
+}
+ion-menu-button{
+    font-size: 40px;
+}

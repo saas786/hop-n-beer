@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from "@ionic/angular";
-import { first } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-songs',
@@ -21,7 +20,7 @@ export class SongsPage implements OnInit {
   public queue_songs:any;
 
 
-  constructor(public callNumber: CallNumber, private http: HttpClient, public alertController: AlertController) { }
+  constructor(public callNumber: CallNumber, private http: HttpClient, public alertController: AlertController, private route: Router) { }
 
   ngOnInit() {
     this.songs_list();
@@ -90,6 +89,14 @@ export class SongsPage implements OnInit {
       this.queue_songs = data;
       this.unavailable_songs = [];
       this.available_songs = [];
+    })
+  }
+
+  check(){
+    this.http.get("https://d61d-79-19-191-69.ngrok.io/check").subscribe((data) =>{
+      if (data=="False"){
+        this.route.navigate(['/pages/off']);
+      }
     })
   }
 
