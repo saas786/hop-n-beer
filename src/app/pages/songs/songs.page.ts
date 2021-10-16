@@ -12,7 +12,7 @@ import { first } from 'rxjs/operators';
 })
 export class SongsPage implements OnInit {
 
-
+  public searchTerm:string;
   public available_songs:any;
   public unavailable_songs:any;
 
@@ -102,34 +102,6 @@ export class SongsPage implements OnInit {
       event.target.complete();
       window.location.reload();
     }, 1000);
-  }
-
-  filterItems(searchTerm) {
-    return this.available_songs.filter(item => {
-      return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
-    });
-  }
-
-  async filterList(evt) {
-    this.available_songs = this.available_songs_backup;
-    this.unavailable_songs = this.unavailable_songs_backup;
-    const searchTerm = evt.srcElement.value;
-  
-    if (!searchTerm) {
-      return;
-    }
-  
-    this.available_songs = this.available_songs.filter(currentFood => {
-      if (currentFood.name && searchTerm) {
-        return (currentFood.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
-      }
-    });
-    
-    this.unavailable_songs = this.unavailable_songs.filter(currentFood => {
-      if (currentFood.name && searchTerm) {
-        return (currentFood.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
-      }
-    });
   }
 
   callButton(){

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { SongsPageRoutingModule } from './songs-routing.module';
 
 import { SongsPage } from './songs.page';
@@ -13,6 +14,7 @@ import { SongsPage } from './songs.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    Ng2SearchPipeModule,
     SongsPageRoutingModule
   ],
   declarations: [SongsPage]

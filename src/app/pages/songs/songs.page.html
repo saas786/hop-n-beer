@@ -34,23 +34,29 @@
     </ion-segment-button>
 
   </ion-segment>
-  <ion-searchbar (ionChange)="filterItems($event.target.value)"></ion-searchbar>
+  <ion-searchbar 
+              placeholder="Cerca..."
+              [(ngModel)]="searchTerm"
+              showCancelButton="focus"
+              animated
+              ></ion-searchbar>
+
   <ion-list>
-    <ion-item *ngFor="let item of available_songs" slot="start">
+    <ion-item *ngFor="let item of available_songs | filter:searchTerm" slot="start">
       <img class="song-cover" src="{{item.copertina}}">
       <ion-button class="song-button" (click)=presentAlertConfirm(item.id,item.titolo) expand="full" fill="clear" color="dark">
         {{item.titolo}}
       </ion-button>
     </ion-item>
 
-    <ion-item *ngFor="let item of unavailable_songs" slot="start">
+    <ion-item *ngFor="let item of unavailable_songs | filter:searchTerm" slot="start">
       <img class="song-cover" src="{{item.copertina}}">
       <ion-button class="song-button-un" disabled expand="full" fill="clear" color="dark">
         {{item.titolo}}
       </ion-button>
     </ion-item>
 
-    <ion-item *ngFor="let item of queue_songs" slot="start">
+    <ion-item *ngFor="let item of queue_songs | filter:searchTerm" slot="start">
       <img class="song-cover" src="{{item.copertina}}">
       <ion-label class="song-button" expand="full" fill="clear" color="dark">{{item.titolo}}</ion-label>
     </ion-item>

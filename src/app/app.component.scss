@@ -2,12 +2,9 @@ ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #f3f3f3));
 }
 
-#main-content{
-  --background: url("https://d61d-79-19-191-69.ngrok.io/static/fondo-app.png") 0 0/100% 100% no-repeat;
-  background-repeat: repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+ion-menu{
+  --ion-background-color: var(--ion-color-primary);
+  /* --ion-background-image: url("https://d61d-79-19-191-69.ngrok.io/static/fondo-app.png"); */
 }
 
 ion-menu.md ion-content {
@@ -24,7 +21,6 @@ ion-menu.md ion-list {
 ion-menu.md ion-item {
   --padding-start: 10px;
   --padding-end: 10px;
-  color: #73849a;
   border-radius: 4px;
 }
 
@@ -34,10 +30,6 @@ ion-menu.md ion-item.selected {
 
 ion-menu.md ion-item.selected ion-icon {
   color: var(--ion-color-secondary);
-}
-
-ion-menu.md ion-item ion-icon {
-  color: #73849a;
 }
 
 ion-menu.md ion-item ion-label {
@@ -65,31 +57,19 @@ ion-menu.ios ion-item.selected {
 
 ion-menu.ios ion-item {
   font-size: 24px;
-  color: #73849a;
+  color: #000;
 }
 
 ion-item.selected {
   --color: var(--ion-color-secondary);
 }
+
 ion-item.md.selected {
   --color: var(--ion-color-secondary);
 }
-
-// CUSTOM SECTION 
-
 .foot-call{
+  font-size: 100%;
+}
+#numero{
   color: #73849a;
-  width: 100%;
-  height: 100%;
 }
-
-#footer{
-  height: 10%;
-}
-
-/* .button-content{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
- */ 
