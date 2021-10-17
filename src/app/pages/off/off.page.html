@@ -16,6 +16,17 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content scrollY="false">
+	<ion-refresher slot="fixed" (ionRefresh)="goToSongs()" close-duration="500ms">
+		<ion-refresher-content></ion-refresher-content>
+	  </ion-refresher>
+	<div class="testo-pagina">
+		<h2>
+			Al Momento Siamo Chiusi!
+		</h2>
+		<h3>
+			Il servizio di JukeBox è disponibile solo durante l'orario di attività!
+		</h3>
+	</div>
 </ion-content>
+	

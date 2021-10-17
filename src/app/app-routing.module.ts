@@ -36,8 +36,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'off',
+    path: 'pages/off',
     loadChildren: () => import('./pages/off/off.module').then( m => m.OffPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./members/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
 ];
 

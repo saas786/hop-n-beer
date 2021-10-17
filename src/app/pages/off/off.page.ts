@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
@@ -8,9 +9,13 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 })
 export class OffPage implements OnInit {
 
-  constructor(public callNumber: CallNumber) { }
+  constructor(public callNumber: CallNumber, private route: Router) { }
 
   ngOnInit() {
+  }
+
+  goToSongs(){
+    this.route.navigate(['/pages/songs']);
   }
 
   callButton(){

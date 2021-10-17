@@ -23,7 +23,7 @@ export class SongsPage implements OnInit {
   constructor(public callNumber: CallNumber, private http: HttpClient, public alertController: AlertController, private route: Router) { }
 
   ngOnInit() {
-    this.songs_list();
+    this.check();
   }
 
   show(ev) {
@@ -94,8 +94,11 @@ export class SongsPage implements OnInit {
 
   check(){
     this.http.get("https://d61d-79-19-191-69.ngrok.io/check").subscribe((data) =>{
-      if (data=="False"){
+      if (data["state"]=="False"){
         this.route.navigate(['/pages/off']);
+      }
+      else{
+        this.songs_list();
       }
     })
   }
