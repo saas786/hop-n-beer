@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu-page',
@@ -8,11 +10,20 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 })
 export class MenuPagePage implements OnInit {
 
-  constructor(public callNumber: CallNumber) { }
-
+  constructor(public callNumber: CallNumber, public alertController: AlertController, private route: Router) { }
+  
   ngOnInit() {
+    this.init();
   }
 
+  init(){
+    var menu = document.getElementById('menu-img') as HTMLImageElement; 
+    menu.src = "https://d61d-79-19-191-69.ngrok.io/static/menu/menu.jpg"
+  }
+
+  goHome(){
+    this.route.navigate(['/pages/home']);
+  }
   
   doRefresh(event) {
     console.log('Begin async operation');
@@ -20,12 +31,38 @@ export class MenuPagePage implements OnInit {
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();
-      window.location.reload();
+      this.init();
     }, 1000);
   }
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Avviare la Chiamata?',
+      message: 'Sei sicuro di voler chiamare il locale Hop \'N\' Beer?',
+      buttons: [
+        {
+          text: 'Annulla',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Annullato')
+          }
+        }, {
+          text: 'Ok',
+          handler: () => {
+            this.callButton()
+            console.log('Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
 
   callButton(){
-    this.callNumber.callNumber("3314378428", true)
+    this.callNumber.callNumber("+393314378428", true)
       .then(res => console.log('Chiamata Avviata', res))
       .catch(err => console.log('Errore nell\'avvio della chiamata', err));
   }

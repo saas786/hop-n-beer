@@ -1,16 +1,14 @@
 <ion-header>
 	<ion-toolbar color="primary">
-		<div class="titolo">
-			<ion-title mode="ios">
-				<ion-router-link fill="clear" href="/pages/home">
-				<img id="logo" src="./assets/images/logo-title.png">
-				</ion-router-link>
+		<div class="titolo" (click)="goHome();">
+        <ion-title mode="ios" >
+				<img id="logo" src="./assets/images/logo-title.webp">
 			</ion-title>
 		</div>
 	  <div class="menu">
 		<ion-menu-button color="dark" slot="start" ></ion-menu-button>
 	</div>
-		<ion-button class="call" slot="end" fill="clear" color="dark" (click)="callButton()">
+		<ion-button class="call" slot="end" fill="clear" color="dark" (click)="presentAlertConfirm()">
 			<ion-icon name="call"></ion-icon>
 	  </ion-button>
 	</ion-toolbar>
@@ -38,7 +36,7 @@
       <div class="nome">{{item.nome}}</div>
     </div>
     <div class="birra" >
-      <img class="logo" src="./assets/images/logo.png">
+      <img class="logo" src="./assets/images/logo.webp">
     </div>
   </div>
 </ion-content>

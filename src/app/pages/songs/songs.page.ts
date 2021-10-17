@@ -23,7 +23,15 @@ export class SongsPage implements OnInit {
   constructor(public callNumber: CallNumber, private http: HttpClient, public alertController: AlertController, private route: Router) { }
 
   ngOnInit() {
+    this.init();
+  }
+
+  init(){
     this.check();
+  }
+
+  goHome(){
+    this.route.navigate(['/pages/home']);
   }
 
   show(ev) {
@@ -52,6 +60,31 @@ export class SongsPage implements OnInit {
           text: 'Ok',
           handler: () => {
             this.queue_add(id)
+            console.log('Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+  async alertCall() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Avviare la Chiamata?',
+      message: 'Sei sicuro di voler chiamare il locale Hop \'N\' Beer?',
+      buttons: [
+        {
+          text: 'Annulla',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Annullato')
+          }
+        }, {
+          text: 'Ok',
+          handler: () => {
+            this.callButton()
             console.log('Okay');
           }
         }
@@ -110,7 +143,8 @@ export class SongsPage implements OnInit {
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();
-      window.location.reload();
+      this.init();
+
     }, 1000);
   }
 
