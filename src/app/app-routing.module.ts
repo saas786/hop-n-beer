@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
   },
   {
-    path: 'pages/splashscreen',
-    loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
-  },
-  {
     path: 'pages/birre',
     loadChildren: () => import('./pages/birre/birre.module').then( m => m.BirrePageModule)
   },
@@ -46,6 +42,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./members/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'pages/code',
+    loadChildren: () => import('./pages/code/code.module').then( m => m.CodePageModule)
   },
 ];
 
