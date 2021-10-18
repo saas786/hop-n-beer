@@ -1,0 +1,8 @@
+opencv-python
+numpy
+pyzbar
+requests
+sqlite3
+youtube_dl
+future
+playsound
