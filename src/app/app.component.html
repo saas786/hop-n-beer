@@ -1,5 +1,6 @@
 <ion-app>
   <ion-header>
+  
     <ion-toolbar color="primary">
       <div class="titolo" (click)="goHome()">
         <ion-title mode="ios">
@@ -13,11 +14,11 @@
         <ion-icon id="call-icon" name="call"></ion-icon>
       </ion-button>
     </ion-toolbar>
-    </ion-header>
+  </ion-header>
   
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
+  <ion-content>
+    <ion-split-pane contentId="main-content">
+      <ion-menu contentId="main-content" type="overlay">
         <ion-list id="inbox-list" lines="inset">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="inset" detail="false" routerLinkActive="selected">
@@ -25,16 +26,16 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-      </ion-content>
-      <ion-list id="footer">
-        <ion-item>
-          <ion-button expand="block" id="num-but" class="foot-call" fill="clear" (click)="call()">
-            <ion-icon color="success" name="call"></ion-icon>
-            <ion-label id="numero">+39 331 437 8428</ion-label>
-          </ion-button>
-        </ion-item>
-      </ion-list>
-    </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
+        <ion-footer id="footer">
+          <ion-item>
+            <ion-button expand="block" id="num-but" class="foot-call" fill="clear" (click)="call()">
+              <ion-icon color="success" name="call"></ion-icon>
+              <ion-label id="numero">+39 331 437 8428</ion-label>
+            </ion-button>
+          </ion-item>
+        </ion-footer>
+      </ion-menu>
+      <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+  </ion-content>
 </ion-app>

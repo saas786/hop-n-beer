@@ -1,18 +1,19 @@
 <ion-header>
-	<ion-toolbar color="primary">
-		<div class="titolo" (click)="goHome();">
-        <ion-title mode="ios" >
-				<img id="logo" src="./assets/images/logo-title.webp">
-			</ion-title>
-		</div>
-	  <div class="menu">
-		<ion-menu-button color="dark" slot="start" ></ion-menu-button>
-	</div>
-		<ion-button class="call" slot="end" fill="clear" color="dark" (click)="presentAlertConfirm()">
-			<ion-icon name="call"></ion-icon>
-	  </ion-button>
-	</ion-toolbar>
-  </ion-header>
+  
+  <ion-toolbar color="primary">
+    <div class="titolo" (click)="goHome()">
+      <ion-title mode="ios">
+        <img id="logo" src="./assets/images/logo-title.webp">
+      </ion-title>
+    </div>
+    <div class="menu">
+    <ion-menu-button color="dark" slot="start" ></ion-menu-button>
+  </div>
+    <ion-button class="call" slot="end" fill="clear" color="dark" (click)="presentAlertConfirm()">
+      <ion-icon id="call-icon" name="call"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content scrollY="false">
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
@@ -20,19 +21,19 @@
   </ion-refresher>
   <div class="riga1">
     <div class="birra" id={{item.colore}} [style.backgroundColor] = "item.colore" *ngFor="let item of birre | slice:0:2;">
-      <img class="img-birra" src="https://d61d-79-19-191-69.ngrok.io{{item.circle_logo}}">
+      <img class="img-birra" src="https://fa73-37-163-59-138.ngrok.io{{item.circle_logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>
   </div>
   <div class="riga2">
     <div class="birra"  id={{item.colore}} [style.backgroundColor] = "item.colore" *ngFor="let item of birre | slice:2:4;">
-      <img class="img-birra" src="https://d61d-79-19-191-69.ngrok.io{{item.circle_logo}}">
+      <img class="img-birra" src="https://fa73-37-163-59-138.ngrok.io{{item.circle_logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>
   </div>
   <div class="riga3">
     <div class="birra"  id={{item.colore}} [style.backgroundColor] = "item.colore" *ngFor="let item of birre | slice:4:6;">
-      <img class="img-birra" src="https://d61d-79-19-191-69.ngrok.io{{item.circle_logo}}">
+      <img class="img-birra" src="https://fa73-37-163-59-138.ngrok.io{{item.circle_logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>
     <div class="birra" >

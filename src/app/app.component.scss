@@ -4,7 +4,6 @@ ion-content {
 
 ion-menu{
   --ion-background-color: var(--ion-color-primary);
-  /* --ion-background-image: url("https://d61d-79-19-191-69.ngrok.io/static/fondo-app.png"); */
 }
 
 ion-menu.md ion-content {
@@ -71,7 +70,7 @@ ion-item.md.selected {
   font-size: 100%;
 }
 #numero{
-  color: #73849a;
+  color: black;
 }
 
 ion-title{
@@ -98,3 +97,4 @@ ion-toolbar{
 ion-menu-button{
   font-size: 40px;
 }
+

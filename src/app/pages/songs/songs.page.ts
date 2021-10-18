@@ -96,7 +96,7 @@ export class SongsPage implements OnInit {
 
   public queue_add(id){
     var str_id = String(id);
-    let url = 'https://d61d-79-19-191-69.ngrok.io/music/queue/'.concat(str_id);
+    let url = 'https://fa73-37-163-59-138.ngrok.io/music/queue/'.concat(str_id);
 
     this.http.get(url).subscribe((data)=>{
       console.log(data);
@@ -106,19 +106,19 @@ export class SongsPage implements OnInit {
   }
 
   songs_list(){
-    this.http.get("https://d61d-79-19-191-69.ngrok.io/music/lista/disp/app").subscribe((data) =>{        
+    this.http.get("https://fa73-37-163-59-138.ngrok.io/music/lista/disp/app").subscribe((data) =>{        
       this.queue_songs = [];
       this.available_songs = data;
     })
 
-    this.http.get("https://d61d-79-19-191-69.ngrok.io/music/lista/noDisp/app").subscribe((data) =>{        
+    this.http.get("https://fa73-37-163-59-138.ngrok.io/music/lista/noDisp/app").subscribe((data) =>{        
       this.queue_songs = [];
       this.unavailable_songs = data;
     })
   }
 
   queue_list(){
-    this.http.get("https://d61d-79-19-191-69.ngrok.io/music/queue/show").subscribe((data) =>{
+    this.http.get("https://fa73-37-163-59-138.ngrok.io/music/queue/show").subscribe((data) =>{
       this.queue_songs = data;
       this.unavailable_songs = [];
       this.available_songs = [];
@@ -126,7 +126,7 @@ export class SongsPage implements OnInit {
   }
 
   check(){
-    this.http.get("https://d61d-79-19-191-69.ngrok.io/check").subscribe((data) =>{
+    this.http.get("https://fa73-37-163-59-138.ngrok.io/check").subscribe((data) =>{
       if (data["state"]=="False"){
         this.route.navigate(['/pages/off']);
       }
