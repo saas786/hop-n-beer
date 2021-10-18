@@ -21,6 +21,8 @@ ion-content{
     justify-content: space-between;
 }
 
+
+
 .title-page{
     display: flex;
     align-items: center;
@@ -28,28 +30,3 @@ ion-content{
     flex-direction: column;
 }
 
-
-ion-title{
-    max-width: 100%;
-    width: 100%;
-}
-
-ion-toolbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu,.call{
-    width: 20%;
-    max-width: 20%;
-}
-
-ion-icon{
-    width: 85%;
-    height: 85%;
-}
-
-ion-menu-button{
-    font-size: 40px;
-}
