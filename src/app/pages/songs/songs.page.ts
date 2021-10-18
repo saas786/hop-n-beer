@@ -100,7 +100,7 @@ export class SongsPage implements OnInit {
 
     this.http.get(url).subscribe((data)=>{
       console.log(data);
-      window.location.reload();
+      this.init();
     });
     console.log(url);
   }
