@@ -3,6 +3,10 @@ ion-content{
   --background: var(--ion-item-background, var(--ion-background-color, #f3f3f3));
 }
 
+ion-header{
+  z-index: 1;
+}
+
 ion-menu{
   --ion-background-color: var(--ion-color-primary);
 }
@@ -98,4 +102,6 @@ ion-toolbar{
 ion-menu-button{
   font-size: 40px;
 }
-
+.call-icon{
+  z-index: 10;
+}

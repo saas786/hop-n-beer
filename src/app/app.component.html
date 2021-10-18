@@ -1,6 +1,6 @@
 <ion-app>
   <ion-header>
-  
+    
     <ion-toolbar color="primary">
       <div class="titolo" (click)="goHome()">
         <ion-title mode="ios">
@@ -8,8 +8,8 @@
         </ion-title>
       </div>
       <div class="menu">
-      <ion-menu-button color="dark" slot="start" ></ion-menu-button>
-    </div>
+        <ion-menu-button color="dark" slot="start" ></ion-menu-button>
+      </div>
       <ion-button class="call" slot="end" fill="clear" color="dark" (click)="presentAlertConfirm()">
         <ion-icon id="call-icon" name="call"></ion-icon>
       </ion-button>
@@ -17,19 +17,19 @@
   </ion-header>
   
   <ion-content>
-    <ion-split-pane contentId="main-content">
-      <ion-menu contentId="main-content" type="overlay">
-        <ion-list id="inbox-list" lines="inset">
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+        <ion-list id="inbox-list" lines="inset" mode="md">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="inset" detail="false" routerLinkActive="selected">
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-        <ion-footer id="footer">
+        <ion-footer>
           <ion-item>
-            <ion-button expand="block" id="num-but" class="foot-call" fill="clear" (click)="presentAlertConfirm()">
-              <ion-icon color="success" name="call"></ion-icon>
+            <ion-button expand="block" id="num-but" class="foot-call" fill="clear" (click)="call()">
+              <ion-icon color="success" name="call" class="call-icon"></ion-icon>
               <ion-label id="numero">+39 331 437 8428</ion-label>
             </ion-button>
           </ion-item>
