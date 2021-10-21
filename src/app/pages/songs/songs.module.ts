@@ -8,6 +8,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { SongsPageRoutingModule } from './songs-routing.module';
 
 import { SongsPage } from './songs.page';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { SongsPage } from './songs.page';
     Ng2SearchPipeModule,
     SongsPageRoutingModule
   ],
-  declarations: [SongsPage]
+  declarations: [SongsPage,HeaderComponent]
 })
 export class SongsPageModule {}

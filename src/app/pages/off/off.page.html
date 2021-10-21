@@ -1,7 +1,10 @@
-<ion-content scrollY="false">
+<ion-header>
+	<app-header></app-header>
+</ion-header>
+<ion-content scroll-y="false">
 	<ion-refresher slot="fixed" (ionRefresh)="goToSongs()" close-duration="500ms">
 		<ion-refresher-content></ion-refresher-content>
-	  </ion-refresher>
+	</ion-refresher>
 	<div class="testo-pagina">
 		<h2>
 			Al Momento Siamo Chiusi!
