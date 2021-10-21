@@ -27,8 +27,16 @@ export class SongsPage implements OnInit {
   }
 
   init(){
-    this.check();
+    this.http.get("https://fa73-37-163-59-138.ngrok.io/check").subscribe((data) =>{
+      if (data["state"]=="False"){
+        this.route.navigate(['/pages/off']);
+      }
+      else{
+        this.songs_list();        
+      }
+    })
   }
+
 
   goHome(){
     this.route.navigate(['/pages/home']);
@@ -97,12 +105,16 @@ export class SongsPage implements OnInit {
   public queue_add(id){
     var str_id = String(id);
     let url = 'https://fa73-37-163-59-138.ngrok.io/music/queue/'.concat(str_id);
-
-    this.http.get(url).subscribe((data)=>{
-      console.log(data);
-      this.init();
+    this.http.get("https://fa73-37-163-59-138.ngrok.io/check").subscribe((data) =>{
+      if (data["state"]=="False"){
+        this.route.navigate(['/pages/off']);
+      }
+      else{
+        this.http.get(url).subscribe((data)=>{
+          this.doRefresh(null);
+        });
+      }
     });
-    console.log(url);
   }
 
   songs_list(){
@@ -124,27 +136,16 @@ export class SongsPage implements OnInit {
       this.available_songs = [];
     })
   }
-
-  check(){
-    this.http.get("https://fa73-37-163-59-138.ngrok.io/check").subscribe((data) =>{
-      if (data["state"]=="False"){
-        this.route.navigate(['/pages/off']);
-      }
-      else{
-        this.songs_list();
-      }
-    })
-  }
-
   
   doRefresh(event) {
-    console.log('Begin async operation');
+    console.log('Ricarico...');
 
     setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
+      console.log('Pagina Ricaricata');
+      if (event != null){
+        event.target.complete();
+      }
       this.init();
-
     }, 1000);
   }
 

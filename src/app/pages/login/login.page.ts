@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private googlePlus: GooglePlus) { }
+  constructor(private googlePlus: GooglePlus, private menuCtrl:MenuController) {this.menuCtrl.enable(false);  }
 
   ngOnInit() {
   }
