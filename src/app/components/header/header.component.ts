@@ -1,32 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
-  template: `
-  <ion-header> 
-    <ion-toolbar color="primary">
-      <div class="titolo" (click)="goHome()">
-        <ion-title mode="ios">
-          <img id="logo" src="./assets/images/logo-title.webp">
-        </ion-title>
-      </div>
-      <div class="menu">
-        <ion-menu-button color="dark" slot="start" ></ion-menu-button>
-      </div>
-      <ion-button class="call" slot="end" fill="clear" color="dark" (click)="presentAlertConfirm()">
-        <ion-icon id="call-icon" name="call"></ion-icon>
-      </ion-button>
-    </ion-toolbar>
-  </ion-header>
-  `
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
+export class HeaderComponent implements OnInit {
 
-export class HeaderComponent {
-  constructor(public callNumber: CallNumber, public route:Router, public alertController:AlertController) {}
+  constructor(public callNumber: CallNumber, public route:Router, public alertController:AlertController) { }
 
+  
   call(){
     this.callNumber.callNumber("+393314378428", true)
       .then(res => console.log('Chiamata Avviata', res))
@@ -62,6 +48,6 @@ export class HeaderComponent {
     await alert.present();
   }
 
-
+  ngOnInit() {}
 
 }
