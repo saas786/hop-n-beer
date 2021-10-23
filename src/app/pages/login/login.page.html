@@ -1,15 +1,15 @@
 <ion-content>
-  <div class="head">
-    <div class="logo">
-      <img id="esagono" src="./assets/images/logo.webp">
-      <img id="scritta" src="./assets/images/logo-title.webp">
-    </div>
+  <div class="logo">
+    <img src="./assets/images/logo-contorno.webp">
   </div>
   <ion-card>
     <ion-card-content>
-      <ion-title>Accedi</ion-title>
-      <ion-button (click)="google_login()" expand="block">Block Button</ion-button>
-
+      <ion-card-title>Accedi</ion-card-title>
+      <ion-button (click)="google_login()" expand="block">
+        <ion-icon name="logo-google"></ion-icon>
+        Accedi Con Google
+      </ion-button>
+      <ion-footer></ion-footer>
     </ion-card-content>
   </ion-card>
 </ion-content>

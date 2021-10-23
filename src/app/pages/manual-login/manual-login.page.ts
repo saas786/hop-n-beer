@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-manual-login',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManualLoginPage implements OnInit {
 
-  constructor() { }
+  constructor(private menuCtrl:MenuController) {this.menuCtrl.enable(false);}
 
   ngOnInit() {
   }
