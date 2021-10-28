@@ -23,5 +23,8 @@ export class HomePage implements OnInit {
       window.location.reload();
     }, 1000);
   }
+  log(){
+    this.route.navigate(['/pages/login']);
+  }
 
 }

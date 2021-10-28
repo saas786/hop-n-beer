@@ -5,10 +5,8 @@
   <ion-card>
     <ion-card-content>
       <ion-card-title>Accedi</ion-card-title>
-      <ion-button (click)="google_login()" expand="block">
-        <ion-icon name="logo-google"></ion-icon>
-        Accedi Con Google
-      </ion-button>
+
+        <app-google-login-button (click)="google_login();"></app-google-login-button>
       <ion-footer></ion-footer>
     </ion-card-content>
   </ion-card>
