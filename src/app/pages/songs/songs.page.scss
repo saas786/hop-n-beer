@@ -1,4 +1,4 @@
-.song-button, .song-button-un, .song-label{
+.song-button,#song-button, .song-button-un, .song-label{
     font-size: 20px;
 }
 
@@ -15,14 +15,19 @@
     height: 100%;
 }
 
+.canzone{
+    color:#0c7cd8
+}
+
+.artista{
+    color:#000
+}
+
 ion-content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
-
-
 .title-page{
     display: flex;
     align-items: center;
@@ -30,3 +35,22 @@ ion-content{
     flex-direction: column;
 }
 
+.song-button, .song-button-un{
+    height: 100%;
+}
+
+.button-content{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    text-align: left;
+    font-size:large
+}
+
+.canzone,.artista{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}

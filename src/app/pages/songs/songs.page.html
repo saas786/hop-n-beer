@@ -7,17 +7,18 @@
     </ion-refresher>
 
   <div class="title-page">
-    <h2>JUKEBOX</h2>
+    <h2>MUSICA</h2>
     <h3>Aggiungi Canzoni in Coda</h3>
   </div>
-  <ion-segment (ionChange)="show($event)" value="canzoni">
+  <ion-segment (ionChange)="show($event)" value="canzoni" scrollable="true">
     <ion-segment-button value="canzoni">
       <ion-label>Canzoni</ion-label>
     </ion-segment-button>
-
+    
     <ion-segment-button value="coda">
       <ion-label>Coda</ion-label>
     </ion-segment-button>
+
 
   </ion-segment>
   <ion-searchbar 
@@ -31,20 +32,29 @@
     <ion-item *ngFor="let item of available_songs | filter:searchTerm" slot="start" scroll-x="true">
       <img class="song-cover" src="{{item.copertina}}">
       <ion-button class="song-button" id='{{item.id}}' (click)=presentAlertConfirm(item.id,item.titolo,$event) expand="full" fill="clear" color="dark">
-        {{item.titolo}}
+        <div class="button-content">
+          <ion-label class="canzone">{{item.titolo}}</ion-label>
+          <ion-label class="artista">{{item.artista}}</ion-label>
+        </div>
       </ion-button>
     </ion-item>
 
     <ion-item *ngFor="let item of unavailable_songs | filter:searchTerm" slot="start">
       <img class="song-cover" src="{{item.copertina}}">
       <ion-button class="song-button-un" disabled expand="full" fill="clear" color="dark">
-        {{item.titolo}}
+        <div class="button-content">
+          <ion-label class="canzone">{{item.titolo}}</ion-label>
+          <ion-label class="artista">{{item.artista}}</ion-label>
+        </div>
       </ion-button>
     </ion-item>
 
     <ion-item *ngFor="let item of queue_songs | filter:searchTerm" slot="start">
       <img class="song-cover" src="{{item.copertina}}">
-      <ion-label class="song-button" expand="full" fill="clear" color="dark">{{item.titolo}}</ion-label>
+      <div class="button-content">
+        <ion-label id="song-button" class="canzone" expand="full" fill="clear" color="dark">{{item.titolo}}</ion-label>
+        <ion-label id="song-button" class="artista" expand="full" fill="clear" color="dark">{{item.artista}}</ion-label>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>

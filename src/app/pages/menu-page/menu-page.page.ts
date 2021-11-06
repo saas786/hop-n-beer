@@ -18,7 +18,7 @@ export class MenuPagePage implements OnInit {
 
   init(){
     var menu = document.getElementById('menu-img') as HTMLImageElement; 
-    menu.src = "https://fa73-37-163-59-138.ngrok.io/static/menu/menu.webp"
+    menu.src = "http://49.12.40.228:3000/static/menu/menu.webp"
   }
 
   goHome(){

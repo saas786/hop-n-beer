@@ -9,7 +9,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private googlePlus: GooglePlus, private menuCtrl:MenuController) {this.menuCtrl.enable(false);  }
+  constructor(private googlePlus: GooglePlus, private menuCtrl:MenuController) {this.menuCtrl.enable(false);}
 
   ngOnInit() {
   }
@@ -19,4 +19,10 @@ export class LoginPage implements OnInit {
       .then(res => console.log(res))
       .catch(err => console.error(err));
   }
+  
+  onSignIn(googleUser){
+    var profile = googleUser.getBasicProfile();
+    var Nome = profile.getName();
+  }
+
 }

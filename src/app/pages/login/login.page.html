@@ -5,8 +5,7 @@
   <ion-card>
     <ion-card-content>
       <ion-card-title>Accedi</ion-card-title>
-
-        <app-google-login-button (click)="google_login();"></app-google-login-button>
+        <div class="g-signin2" (click)="google_login();" data-onsuccess="onSignIn"></div>
       <ion-footer></ion-footer>
     </ion-card-content>
   </ion-card>
