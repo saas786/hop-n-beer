@@ -28,7 +28,7 @@ export class OffPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Avviare la Chiamata?',
-      message: 'Sei sicuro di voler chiamare il locale Hop \'N\' Beer?',
+      message: 'Sei sicuro di voler chiamare il Hop \'N\' Beer?',
       buttons: [
         {
           text: 'Annulla',

@@ -18,7 +18,7 @@ export class MenuPagePage implements OnInit {
 
   init(){
     var menu = document.getElementById('menu-img') as HTMLImageElement; 
-    menu.src = "http://49.12.40.228:3000/static/menu/menu.webp"
+    menu.src = "https://hopnbeer.it/static/menu/menu.webp"
   }
 
   goHome(){
@@ -38,7 +38,7 @@ export class MenuPagePage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Avviare la Chiamata?',
-      message: 'Sei sicuro di voler chiamare il locale Hop \'N\' Beer?',
+      message: 'Sei sicuro di voler chiamare il Hop \'N\' Beer?',
       buttons: [
         {
           text: 'Annulla',

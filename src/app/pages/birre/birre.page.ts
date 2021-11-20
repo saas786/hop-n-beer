@@ -38,7 +38,7 @@ export class BirrePage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Avviare la Chiamata?',
-      message: 'Sei sicuro di voler chiamare il locale Hop \'N\' Beer?',
+      message: 'Sei sicuro di voler chiamare il Hop \'N\' Beer?',
       buttons: [
         {
           text: 'Annulla',
@@ -68,7 +68,7 @@ export class BirrePage implements OnInit {
   }
 
   birre_list(){
-    this.http.get("http://49.12.40.228:3000/birre/lista/app").subscribe((data) =>{        
+    this.http.get("https://hopnbeer.it/birre/lista/app").subscribe((data) =>{        
       this.birre = data;
     })
   }

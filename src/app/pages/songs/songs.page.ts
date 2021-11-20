@@ -27,7 +27,7 @@ export class SongsPage implements OnInit {
   }
 
   init(){
-    this.http.get("http://49.12.40.228:3000/check").subscribe((data) =>{
+    this.http.get("https://hopnbeer.it/check").subscribe((data) =>{
       if (data["state"]=="False"){
         this.route.navigate(['/pages/off']);
       }
@@ -80,7 +80,7 @@ export class SongsPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Avviare la Chiamata?',
-      message: 'Sei sicuro di voler chiamare il locale Hop \'N\' Beer?',
+      message: 'Sei sicuro di voler chiamare il Hop \'N\' Beer?',
       buttons: [
         {
           text: 'Annulla',
@@ -104,8 +104,8 @@ export class SongsPage implements OnInit {
 
   public queue_add(id){
     var str_id = String(id);
-    let url = 'http://49.12.40.228:3000/music/queue/'.concat(str_id);
-    this.http.get("http://49.12.40.228:3000/check").subscribe((data) =>{
+    let url = 'https://hopnbeer.it/music/queue/'.concat(str_id);
+    this.http.get("https://hopnbeer.it/check").subscribe((data) =>{
       if (data["state"]=="False"){
         this.route.navigate(['/pages/off']);
       }
@@ -118,19 +118,19 @@ export class SongsPage implements OnInit {
   }
 
   songs_list(){
-    this.http.get("http://49.12.40.228:3000/music/lista/disp/app").subscribe((data) =>{        
+    this.http.get("https://hopnbeer.it/music/lista/disp/app").subscribe((data) =>{        
       this.queue_songs = [];
       this.available_songs = data;
     })
 
-    this.http.get("http://49.12.40.228:3000/music/lista/noDisp/app").subscribe((data) =>{        
+    this.http.get("https://hopnbeer.it/music/lista/noDisp/app").subscribe((data) =>{        
       this.queue_songs = [];
       this.unavailable_songs = data;
     })
   }
 
-  queue_list(){
-    this.http.get("http://49.12.40.228:3000/music/queue/show").subscribe((data) =>{
+  queue_list(){ 
+    this.http.get("https://hopnbeer.it/music/queue/show").subscribe((data) =>{
       this.queue_songs = data;
       this.unavailable_songs = [];
       this.available_songs = [];
