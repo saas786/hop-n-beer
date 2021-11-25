@@ -35,10 +35,12 @@
     "@ionic-native/instagram": "^5.36.0",
     "@ionic-native/splash-screen": "^5.36.0",
     "@ionic/angular": "^5.5.2",
+    "angularfire2": "^5.4.2",
     "call-number": "^1.0.1",
     "cordova-instagram-plugin": "^0.6.2",
     "cordova-plugin-advanced-http": "^3.2.1",
     "cordova-plugin-googleplus": "^8.5.2",
+    "firebase": "^7.24.0",
     "ng2-search-filter": "^0.5.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
@@ -62,7 +64,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
-    "cordova-android": "^9.1.0",
+    "cordova-android": "^10.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^6.2.0",
     "cordova-plugin-device": "^2.0.2",
@@ -75,6 +77,7 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
+    "gradle": "^1.2.4",
     "jasmine-core": "~3.8.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.2",
@@ -98,7 +101,11 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "mx.ferreyra.callnumber": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.653101083789-sl5vemd91tv1m3isnuos3bfr2stervia",
+        "WEB_APPLICATION_CLIENT_ID": "653101083789-t0v76dama6abqc69r2bohnq8elrunvnp.apps.googleusercontent.com"
+      }
     },
     "platforms": [
       "ios",

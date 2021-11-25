@@ -6,7 +6,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <div class="riga1">
-    <div class="birra"id=birra{{item.id}} *ngFor="let item of birre | slice:0:2;">
+    <div class="birra" id=birra{{item.id}} *ngFor="let item of birre | slice:0:2;" (click)="presentActionSheet()">
       <img class="img-birra" src="https://hopnbeer.it/{{item.circle_logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>
@@ -26,4 +26,5 @@
       <img class="logo" src="./assets/images/logo.webp">
     </div>
   </div>
+  
 </ion-content>
