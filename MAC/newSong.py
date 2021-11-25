@@ -1,31 +1,14 @@
 from __future__ import unicode_literals
-import time
-import sqlite3, databases, os, youtube_dl
+import sqlite3, databases, os, youtube_dl, time, json
 
-ip = 'localhost:3000'
+ip = 'hopnbeer.it'
 
 def download_from_youtube(url,title):
+    url = url.split('&ab_channel')[0]
+    os.system(f"youtube-dl --extract-audio --audio-format mp3 -o songs\\{title}.mp3 {url}")
     
-    ydl_opts = {
-        'format': 'bestaudio/best',
-        'outtmpl': f'songs/{title}.mp3',
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '192',
-        }],
-    }
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        try:
-            ydl.download([url])
-        except:
-            pass
-
-    
-
-
 while True:
-    db = databases.download_file(f'http://{ip}/static/dbs/Songs.db')
+    db = databases.download_file(f'https://{ip}/static/dbs/Songs.db')
     
     conn = sqlite3.connect(db)
 

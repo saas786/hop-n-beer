@@ -1,7 +1,6 @@
-import time
-import requests, os
+import requests,time,json,keyboard,os
 
-ip = 'localhost:3000'
+ip = 'hopnbeer.it'
 
 def boolize(i):
     if i == "True":
@@ -10,12 +9,18 @@ def boolize(i):
 
 
 while True:
-    c = boolize(requests.get(f'http://{ip}/check').text)
-    if c:
-        song = requests.get(f'http://{ip}/music/play').text
-
-        print(song)
+    c = json.loads(requests.get(f'https://{ip}/check').text)['state']
+    if c==True:
+        paused = False
+        song = requests.get(f'https://{ip}/music/play').text
         # play sound
-        os.system(f"afplay {song}.mp3")
+        with open(r'songs\info.json','r') as f:
+            data = json.loads(f.read())
+            f_duration = list(map(int,data[song].split(':')))
+            sec_duration = (f_duration[0]*60)+f_duration[1]+1
+        song = fr'songs\{song}.mp3'
+        os.system(song)
+        time.sleep(sec_duration)
+        
     else:
         print('Spento')
