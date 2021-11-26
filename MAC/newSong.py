@@ -5,8 +5,29 @@ ip = 'hopnbeer.it'
 
 def download_from_youtube(url,title):
     url = url.split('&ab_channel')[0]
-    os.system(f"youtube-dl --extract-audio --audio-format mp3 -o songs\\{title}.mp3 {url}")
-    
+    ydl_opts = {
+        'format': 'bestaudio/best',
+        'outtmpl': f'songs\\{title}.mp3',
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',
+        }],
+    }
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        try:
+            info_dict = ydl.extract_info(url, download=True)
+        except Exception as e:
+            print(e)            
+    duration = os.popen(f'youtube-dl --get-duration "{url}"').read()
+    duration = {title:duration}
+
+    with open(r"songs\info.json", "r+") as file:
+        data = json.load(file)
+        data.update(duration)
+        file.seek(0)
+        json.dump(data, file)
+
 while True:
     db = databases.download_file(f'https://{ip}/static/dbs/Songs.db')
     
