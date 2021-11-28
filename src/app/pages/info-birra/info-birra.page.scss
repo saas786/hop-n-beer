@@ -89,10 +89,22 @@ p{
 
 .prezzo02,.prezzo04{
     display: flex;
+    width: 100%;
+}
+.info-prezzo02,.info-prezzo04{
+    width: 100%;
+}
+
+ion-icon{
+    color: var(--ion-color-primary);
+    height: 100%;
 }
 
 #icon-02{
-    height: 100%;
+    width: 25%;
+}
+#icon-04{
+    width: 55%;
 }
 
 .colore-div{

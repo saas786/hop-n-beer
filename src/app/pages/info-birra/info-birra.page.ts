@@ -86,6 +86,7 @@ doRefresh(event) {
   setTimeout(() => {
     console.log('Async operation has ended');
     event.target.complete();
+    this.cerchi();
     this.get_info();
   }, 1000);
 }
