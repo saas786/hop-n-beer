@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'pages/manual-login',
     loadChildren: () => import('./pages/manual-login/manual-login.module').then( m => m.ManualLoginPageModule)
   },
+  {
+    path: 'pages/info-birra',
+    loadChildren: () => import('./pages/info-birra/info-birra.module').then( m => m.InfoBirraPageModule)
+  },
 ];
 
 @NgModule({

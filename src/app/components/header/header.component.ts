@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   
   call(){
-    this.callNumber.callNumber("+393314378428", true)
+    this.callNumber.callNumber("+393387020803", true)
       .then(res => console.log('Chiamata Avviata', res))
       .catch(err => console.log('Errore nell\'avvio della chiamata', err));
   }
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Avviare la Chiamata?',
-      message: 'Sei sicuro di voler chiamare il Hop \'N\' Beer?',
+      message: 'Sei sicuro di voler chiamare Hop \'N\' Beer?',
       buttons: [
         {
           text: 'Annulla',

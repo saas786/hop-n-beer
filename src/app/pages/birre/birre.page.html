@@ -6,19 +6,19 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <div class="riga1">
-    <div class="birra" id=birra{{item.id}} *ngFor="let item of birre | slice:0:2;" (click)="presentActionSheet()">
+    <div class="birra" id=birra{{i}} (click)="info_birra(item.id)" *ngFor="let item of birre | slice:0:2; let i=index">
       <img class="img-birra" src="https://hopnbeer.it/{{item.circle_logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>
   </div>
   <div class="riga2">
-    <div class="birra" id=birra{{item.id}} *ngFor="let item of birre | slice:2:4;">
+    <div class="birra" id=birra{{i+2}} (click)="info_birra(item.id)" *ngFor="let item of birre | slice:2:4; let i=index">
       <img class="img-birra" src="https://hopnbeer.it/{{item.circle_logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>
   </div>
   <div class="riga3">
-    <div class="birra" id=birra{{item.id}} *ngFor="let item of birre | slice:4:6;">
+    <div class="birra" id=birra{{i+4}} (click)="info_birra(item.id)" *ngFor="let item of birre | slice:4:6; let i=index">
       <img class="img-birra" src="https://hopnbeer.it/{{item.circle_logo}}">
       <div class="nome">{{item.nome}}</div>
     </div>

@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(private callNumber: CallNumber, private alertController: AlertController) {}
   
   call(){
-    this.callNumber.callNumber("+393314378428", true)
+    this.callNumber.callNumber("+393387020803", true)
       .then(res => console.log('Chiamata Avviata', res))
       .catch(err => console.log('Errore nell\'avvio della chiamata', err));
   }

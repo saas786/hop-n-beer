@@ -28,6 +28,8 @@
     "@capacitor/ios": "3.2.4",
     "@capacitor/keyboard": "1.1.0",
     "@capacitor/status-bar": "1.0.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@ionic-native/call-number": "^5.36.0",
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/google-plus": "^5.36.0",
@@ -67,6 +69,7 @@
     "cordova-android": "^10.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^6.2.0",
+    "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
@@ -105,7 +108,8 @@
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "com.googleusercontent.apps.653101083789-sl5vemd91tv1m3isnuos3bfr2stervia",
         "WEB_APPLICATION_CLIENT_ID": "653101083789-t0v76dama6abqc69r2bohnq8elrunvnp.apps.googleusercontent.com"
-      }
+      },
+      "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
       "ios",

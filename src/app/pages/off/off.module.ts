@@ -4,14 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { OffPageRoutingModule } from './off-routing.module';
 import { OffPage } from './off.page';
-import { HeaderComponent } from 'src/app/components/header/header.component';
+import { HeaderModule } from 'src/app/components/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OffPageRoutingModule
+    OffPageRoutingModule,
+    HeaderModule
   ],
   declarations: [OffPage],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { BirrePageRoutingModule } from './birre-routing.module';
 
 import { BirrePage } from './birre.page';
-import { HeaderComponent } from 'src/app/components/header/header.component';
+import { HeaderModule } from 'src/app/components/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    HeaderModule,
     BirrePageRoutingModule
   ],
   declarations: [BirrePage],

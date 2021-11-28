@@ -62,7 +62,7 @@ export class MenuPagePage implements OnInit {
 
 
   callButton(){
-    this.callNumber.callNumber("+393314378428", true)
+    this.callNumber.callNumber("+393387020803", true)
       .then(res => console.log('Chiamata Avviata', res))
       .catch(err => console.log('Errore nell\'avvio della chiamata', err));
   }
