@@ -43,44 +43,52 @@
 }
 
 .header{
-    font-size: larger;
+    font-size: medium;
     text-transform: uppercase;
     max-width: fit-content;
+    margin:0;
 }
 
 .info{
-    width: 80%;
+    width: 100%;
     height: 40%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
+}
+
+.colore{
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
 }
 
 .colore-div{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
 }
-.colore{
-    width: 130%;
+
+#colore-rett{
+    height: 100%;
+    width: 20%;
+    margin-right: 2%;
+}
+
+.col1,.col2{
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    flex-direction: column;
+    padding-left: 5%;
+    width: 50%;
 }
 
 .col1{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
     border-right: #bfbfbf 2px solid;
 }
-.col2{
-    padding-left: 10%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-}
+
 
 p{
     margin:0;
@@ -89,10 +97,7 @@ p{
 
 .prezzo02,.prezzo04{
     display: flex;
-    width: 100%;
-}
-.info-prezzo02,.info-prezzo04{
-    width: 100%;
+    align-items: center;
 }
 
 ion-icon{
@@ -101,33 +106,41 @@ ion-icon{
 }
 
 #icon-02{
-    width: 25%;
+    width: 42%;
 }
 #icon-04{
     width: 55%;
 }
 
-.colore-div{
-    display: flex;
-    justify-content: left;
-}
-
-#colore-rett{
-    width: 20%;
-}
-
 #bandiera{
-    width: 20%;
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding-right: 20%;
 }
 
-.stile,.colore,.abv,.prezzo02,.prezzo04,.nazione{
-    width: 100%;
+
+.bandiera-div,.rett-div{
+    height: fit-content;
+    width: 25%;
+    max-width: 25%;
+}
+
+.stile,.abv,.nazione{
+    width: fit-content;
+    margin:0;
+}
+
+.prezzo02,.prezzo04{
+    width: 60%;
 }
 
 p{
+    font-size: medium;
     max-width: 100%;
 }
 
 .nazione-div{
     display: flex;
+    align-items: center;
 }

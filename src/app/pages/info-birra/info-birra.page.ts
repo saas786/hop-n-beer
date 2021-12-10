@@ -10,6 +10,7 @@ interface Birra {
   square_logo: string;
   gradi: number;
   colore: string;
+  nome_colore: string;
   prezzo02: number;
   prezzo04: number;
   nazione: string;
@@ -73,6 +74,7 @@ export class InfoBirraPage implements OnInit {
       bandiera.src = "https://hopnbeer.it/static/flags/"+this.info.nazione+".jpg";
       
       document.getElementById("nazione-p").innerText = this.info.nazione;
+      document.getElementById("colore-p").innerText = this.info.nome_colore;
       document.getElementById("prezzo04-p").innerText =  "€"+((this.info.prezzo04).toFixed(2)).toString();
 
   })

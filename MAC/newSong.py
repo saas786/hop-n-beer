@@ -1,7 +1,20 @@
 from __future__ import unicode_literals
-import sqlite3, databases, os, youtube_dl, time, json
+from eyed3.id3.frames import ImageFrame
+import sqlite3, databases, os, youtube_dl, time, json, requests, eyed3
 
 ip = 'hopnbeer.it'
+
+def download_cover(url,id):
+    img_data = requests.get(url).content
+    with open(f'covers\\{id}.jpg', 'wb') as handler:
+        handler.write(img_data)
+
+def tag_mp3(id):
+    audiofile = eyed3.load(f'songs/{str(id)}.mp3')
+    if (audiofile.tag == None):
+        audiofile.initTag()
+    audiofile.tag.images.set(ImageFrame.FRONT_COVER, open(f'covers/{str(id)}.jpg','rb').read(), 'image/jpeg')
+    audiofile.tag.save()
 
 def download_from_youtube(url,title):
     url = url.split('&ab_channel')[0]
@@ -19,7 +32,7 @@ def download_from_youtube(url,title):
             info_dict = ydl.extract_info(url, download=True)
         except Exception as e:
             print(e)            
-    duration = os.popen(f'youtube-dl --get-duration "{url}"').read()
+    duration = os.popen(f'youtube-dl --get-duration "{url}"').read()[:-1]
     duration = {title:duration}
 
     with open(r"songs\info.json", "r+") as file:
@@ -40,11 +53,17 @@ while True:
     
     
     urlMancanti = [(i[3],i[0]) for i in data if f'{i[0]}.mp3' not in os.listdir('songs')]
+    
+    coverMancanti = [(i[4],i[0]) for i in data if f'{i[0]}.jpg' not in os.listdir('covers')]
 
-    print(urlMancanti)
-
+    for cover,id in coverMancanti:
+        download_cover(cover,id)
+    
     for url,id in urlMancanti:
         print(url,id)
         download_from_youtube(url,id)
+        time.sleep(1)
+        tag_mp3(id)
+
 
     time.sleep(0.5)

@@ -13,7 +13,7 @@ export class AppComponent {
     { title: 'Menu', url: '/pages/menu-page'},
     { title: 'Spina', url: '/pages/birre'},
     { title: 'JukeBox', url: '/pages/songs'},
-    { title: "Ape 'N' Beer", url: '/pages/ape'}
+    /* { title: "Ape 'N' Beer", url: '/pages/ape'} */
   ];
   constructor(private callNumber: CallNumber, private alertController: AlertController) {}
   

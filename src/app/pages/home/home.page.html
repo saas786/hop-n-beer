@@ -4,9 +4,11 @@
 <ion-content>
 	<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content></ion-refresher-content>
-	  </ion-refresher>
+	</ion-refresher>
+	<ion-button (click)="init()" id="refresh" style="display: none;">Aggiorna</ion-button>
 	<div class="container"> 
-		<ion-card>
+		<ion-card *ngFor="let i of embeds">
+			<iframe src="https://www.facebook.com/plugins/post.php?href={{i}}&width=500&show_text=true&appId=601669037161505&height=274" width="500" height="274" style="border:none;overflow:hidden" id={{i}} scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
   		</ion-card>
 	</div>
 </ion-content>

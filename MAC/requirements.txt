@@ -5,7 +5,5 @@ requests
 youtube_dl
 future
 qrcode
-pygame
 keyboard
-pafy
-vlc
+eyed3

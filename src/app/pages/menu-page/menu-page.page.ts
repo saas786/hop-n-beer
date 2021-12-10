@@ -9,6 +9,11 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./menu-page.page.scss'],
 })
 export class MenuPagePage implements OnInit {
+  sliderOpts = {
+    zoom:{
+      maxRatio:2.5
+    }
+  };
 
   constructor(public callNumber: CallNumber, public alertController: AlertController, private route: Router) { }
   
@@ -18,7 +23,7 @@ export class MenuPagePage implements OnInit {
 
   init(){
     var menu = document.getElementById('menu-img') as HTMLImageElement; 
-    menu.src = "https://hopnbeer.it/static/menu/menu.webp"
+    menu.src = "https://hopnbeer.it/static/menu/menu.jpg"
   }
 
   goHome(){

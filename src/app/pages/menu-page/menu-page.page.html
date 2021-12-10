@@ -7,7 +7,11 @@
   </ion-refresher>
   <div class="container">
     <ion-card>
-      <img id="menu-img" src="">
+      <ion-slides [options] = "sliderOpts" zoom>
+        <ion-slide>
+          <img id="menu-img" src="">
+        </ion-slide>
+      </ion-slides>
     </ion-card>
   </div>
 </ion-content>
