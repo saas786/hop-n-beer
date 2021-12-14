@@ -2,7 +2,7 @@
 	<app-header></app-header>
 </ion-header>
 <ion-content scroll-y="false">
-	<ion-refresher slot="fixed" (ionRefresh)="goToSongs()" close-duration="500ms">
+	<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" close-duration="500ms">
 		<ion-refresher-content></ion-refresher-content>
 	</ion-refresher>
 	<div class="testo-pagina">

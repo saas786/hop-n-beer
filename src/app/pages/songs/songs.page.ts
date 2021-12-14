@@ -30,8 +30,10 @@ export class SongsPage implements OnInit {
     this.http.get("https://hopnbeer.it/check").subscribe(data =>{
       if (data['state']==false){
         this.route.navigate(['/pages/off']);
+        console.log('spento');
       }
       else{
+        console.log('acceso');
         this.songs_list();        
       }
     })

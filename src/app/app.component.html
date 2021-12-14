@@ -5,7 +5,7 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-list id="inbox-list" lines="inset" mode="md">
           <ion-header>
-            <img class="logo-orizzontale" src="./assets/images/logo-orizzontale.webp">
+            <img class="logo-orizzontale" (click)="goToHome()" src="./assets/images/logo-orizzontale.webp">
           </ion-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="inset" detail="false" routerLinkActive="selected">
@@ -14,12 +14,23 @@
           </ion-menu-toggle>
         </ion-list>
         <ion-footer>
+        
+          <ion-item>
+            <a href="https://www.instagram.com/hop_n_beer/">
+              <ion-icon id="instagram" name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.facebook.com/hopnbeerPub">
+              <ion-icon id="facebook" name="logo-facebook"></ion-icon>
+            </a>
+          </ion-item>
+
           <ion-item>
             <ion-button expand="block" id="num-but" class="foot-call" fill="clear" (click)="presentAlertConfirm()">
               <ion-icon color="success" name="call" class="call-icon"></ion-icon>
               <ion-label id="numero">+39 338 702 0803</ion-label>
             </ion-button>
           </ion-item>
+
         </ion-footer>
       </ion-menu>
       <ion-router-outlet id="main-content"></ion-router-outlet>

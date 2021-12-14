@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AlertController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-header',
@@ -10,13 +12,34 @@ import { AlertController } from '@ionic/angular';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public callNumber: CallNumber, public route:Router, public alertController:AlertController) { }
-
+  constructor(public callNumber: CallNumber, private http:HttpClient, public route:Router, public alertController:AlertController) { }
   
   call(){
-    this.callNumber.callNumber("+393387020803", true)
-      .then(res => console.log('Chiamata Avviata', res))
-      .catch(err => console.log('Errore nell\'avvio della chiamata', err));
+    this.http.get("https://hopnbeer.it/check").subscribe(data =>{
+      if(data['state']==false){
+        this.presentAlert();
+      }
+      else{
+        this.callNumber.callNumber("+393387020803", true)
+          .then(res => console.log('Chiamata Avviata', res))
+          .catch(err => console.log('Errore nell\'avvio della chiamata', err));
+      }
+    })
+  }
+
+  
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: "Siamo Chiusi!",
+      message: 'Ora siamo chiusi, prova a richiamarci dopo le 18:30',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
 
   goHome(){

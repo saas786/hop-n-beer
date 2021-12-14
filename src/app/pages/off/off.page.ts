@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CallNumber } from '@ionic-native/call-number/ngx';
@@ -10,7 +11,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class OffPage implements OnInit {
 
-  constructor(public callNumber: CallNumber, private route: Router, private alertController: AlertController) { }
+  constructor(public callNumber: CallNumber, private http:HttpClient, private route: Router, private alertController: AlertController) { }
 
   ngOnInit() {
   
@@ -20,8 +21,29 @@ export class OffPage implements OnInit {
     this.route.navigate(['/pages/home']);
   }
 
+  doRefresh(event) {
+    console.log('Ricarico...');
+
+    setTimeout(() => {
+      console.log('Pagina Ricaricata');
+      if (event != null){
+        event.target.complete();
+      }
+      this.goToSongs();
+    }, 1000);
+  }
+
+
   goToSongs(){
-    this.route.navigate(['/pages/songs']);
+    this.http.get("https://hopnbeer.it/check").subscribe(data =>{
+      if (data['state']==false){
+        console.log('spento');
+      }
+      else{
+        console.log('acceso');
+        this.route.navigate(['/pages/songs']);
+      }
+    })
   }
 
   async presentAlertConfirm() {
