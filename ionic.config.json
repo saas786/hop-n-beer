@@ -1,5 +1,5 @@
 {
-  "name": "Hop 'N' Beer",
+  "name": "Hop N Beer",
   "integrations": {
     "capacitor": {
       "enabled": false

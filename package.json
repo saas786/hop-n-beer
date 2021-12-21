@@ -1,5 +1,5 @@
 {
-  "name": "Hop_N_Beer",
+  "name": "hopnbeer",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -41,7 +41,6 @@
     "call-number": "^1.0.1",
     "cordova-instagram-plugin": "^0.6.2",
     "cordova-plugin-advanced-http": "^3.2.1",
-    "cordova-plugin-googleplus": "^8.5.2",
     "firebase": "^7.24.0",
     "ng2-search-filter": "^0.5.1",
     "rxjs": "~6.6.0",
@@ -89,6 +88,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "mx.ferreyra.callnumber": "0.0.2",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4"
@@ -105,16 +105,13 @@
       "cordova-plugin-ionic-keyboard": {},
       "mx.ferreyra.callnumber": {},
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.653101083789-sl5vemd91tv1m3isnuos3bfr2stervia",
-        "WEB_APPLICATION_CLIENT_ID": "653101083789-t0v76dama6abqc69r2bohnq8elrunvnp.apps.googleusercontent.com"
-      },
-      "cordova-plugin-androidx-adapter": {}
+      "cordova-plugin-androidx-adapter": {},
+      "call-number": {}
     },
     "platforms": [
-      "ios",
       "browser",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
